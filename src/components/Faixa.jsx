@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import { SERVICOS } from '../dados.js';
 
-/** Faixa em movimento com os serviços. Pode ser pausada. */
+/** Faixa em movimento com os serviços. Para quando o mouse está em cima. */
 export default function Faixa() {
-  const [pausada, setPausada] = useState(false);
   const grupo = (copia) => (
     <ul aria-hidden={copia || undefined} className="flex shrink-0 items-center">
       {[...SERVICOS, ...SERVICOS].map((s, i) => (
@@ -15,16 +13,11 @@ export default function Faixa() {
     </ul>
   );
   return (
-    <div className="relative flex items-center bg-ouro text-noite">
-      <div className="min-w-0 flex-1 overflow-hidden py-4">
-        <div className="flex w-max animate-faixa" style={{ animationPlayState: pausada ? 'paused' : 'running' }}>
-          {grupo(false)}
-          {grupo(true)}
-        </div>
+    <div className="overflow-hidden bg-ouro py-4 text-noite">
+      <div className="flex w-max animate-faixa hover:[animation-play-state:paused]">
+        {grupo(false)}
+        {grupo(true)}
       </div>
-      <button type="button" onClick={() => setPausada(!pausada)} className="min-h-11 shrink-0 self-stretch bg-noite px-4 font-cond text-sm text-marfim motion-reduce:hidden">
-        {pausada ? 'Continuar' : 'Pausar'}
-      </button>
     </div>
   );
 }

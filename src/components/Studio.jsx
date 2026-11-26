@@ -7,12 +7,12 @@ export default function Studio() {
   const ref = useRef(null);
   const reduzido = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
-  const y = useTransform(scrollYProgress, [0, 1], reduzido ? ['0%', '0%'] : ['-7%', '7%']);
+  const y = useTransform(scrollYProgress, [0, 1], reduzido ? ['0%', '0%'] : ['-2%', '2%']);
   return (
     <section ref={ref} id="studio" className="overflow-hidden bg-folha py-20 md:py-28">
       <div className="wrap grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-        <Surge de={{ x: -60 }} className="aspect-square overflow-hidden rounded-t-full rounded-b-lg">
-          <motion.img {...foto('morena-iluminada-cachos')} style={{ y, scale: 1.16 }} loading="lazy" alt="Cliente do studio sorrindo em frente à parede de plantas" className="size-full object-cover" />
+        <Surge de={{ x: -60 }} className="mx-auto aspect-[683/821] w-full max-w-130 overflow-hidden rounded-t-full rounded-b-lg">
+          <motion.img {...foto('studio')} style={{ y, scale: 1.05 }} loading="lazy" alt="Mulher sorrindo, de cabelo loiro ondulado e camisa azul e branca" className="size-full object-cover" />
         </Surge>
         <div>
           <Titulo>Cuidado com você e com os seus fios</Titulo>

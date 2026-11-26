@@ -13,7 +13,7 @@ export default function Agendar() {
     window.open(zap(msg), '_blank', 'noopener');
   };
   return (
-    <section id="agendar" className="py-20 md:py-28">
+    <section id="agendar" className="overflow-x-clip py-20 md:py-28">
       <div className="wrap grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <div>
           <Titulo>Monte sua mensagem</Titulo>
