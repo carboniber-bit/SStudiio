@@ -1,0 +1,46 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-noite: #000000;
+  --color-ouro: #d8c130;
+  --color-folha: #13251a;
+  --color-marfim: #f3f4ee;
+  --color-tinta: #16180f;
+  --color-nevoa: #bcc2b5;
+  --color-musgo: #4d5547;
+  --color-zap: #0f6b3c;
+
+  --font-titulo: 'Montserrat Variable', system-ui, sans-serif;
+  --font-sans: 'Roboto Variable', system-ui, sans-serif;
+  --font-cond: 'Roboto Condensed Variable', 'Roboto Variable', sans-serif;
+  --font-serifa: 'Roboto Serif Variable', Georgia, serif;
+
+  --animate-faixa: faixa 60s linear infinite;
+  --animate-brilho: brilho 4.5s ease-in-out infinite;
+  --animate-flutua: flutua 7s ease-in-out infinite;
+  --animate-pulso: pulso 2.6s ease-out infinite;
+
+  @keyframes faixa { to { transform: translateX(-50%); } }
+  @keyframes brilho { 0%, 55% { transform: translateX(-130%) skewX(-20deg); } 100% { transform: translateX(330%) skewX(-20deg); } }
+  @keyframes flutua { 50% { transform: translate3d(-10px, 14px, 0); } }
+  @keyframes pulso { 0% { box-shadow: 0 0 0 0 #1fa85c99; } 70%, 100% { box-shadow: 0 0 0 16px #1fa85c00; } }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  body { @apply bg-noite font-sans text-base leading-relaxed text-marfim antialiased; overflow-x: clip; }
+  h1, h2, h3 { @apply font-titulo; text-wrap: balance; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  button:not(:disabled) { cursor: pointer; }
+  :focus-visible { outline: 2px solid var(--color-ouro); outline-offset: 3px; }
+  .clara :focus-visible { outline-color: var(--color-tinta); }
+}
+
+@layer components {
+  .wrap { width: min(100% - 32px, 1180px); margin-inline: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

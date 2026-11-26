@@ -1,17 +1,26 @@
 # Sstudiio Loar
 
 Landing page do Sstudiio Loar, salão de beleza no Km 18, em Osasco/SP.
-HTML, CSS e JavaScript puros, sem build.
+React 19, Tailwind CSS 4, Motion (animações) e Vite.
+Fontes: Montserrat nos títulos; Roboto, Roboto Condensed e Roboto Serif no restante.
 
 ## Ver no computador
 
-    python -m http.server 4173 --directory web
+    npm install
+    npm run dev
+
+## Onde editar
+
+- `src/dados.js`: telefone, e-mail, serviços, tons, fotos e avaliações
+- `src/components/`: uma seção por arquivo
+- `src/index.css`: cores, fontes e animações
+- `public/assets/img/`: fotos (ao trocar uma, atualize `src/medidas.json`)
 
 ## Publicar na Vercel
 
-Importe o repositório em https://vercel.com/new, com Framework Preset `Other`, Root Directory na raiz e sem Build Command. O `vercel.json` já aponta para `web/`.
+Importe o repositório em https://vercel.com/new, com Root Directory na raiz. O `vercel.json` já define Vite, o comando de build e a pasta `dist`.
 
-Depois do primeiro deploy, troque `og:image` em `web/index.html` pela URL completa (`https://SEU-DOMINIO/assets/img/og.jpg`), para a prévia do link funcionar no WhatsApp.
+Depois do primeiro deploy, troque `og:image` em `index.html` pela URL completa (`https://SEU-DOMINIO/assets/img/og.jpg`), para a prévia do link funcionar no WhatsApp.
 
 ## Pendências para confirmar com o salão
 
